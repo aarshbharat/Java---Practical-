@@ -1,0 +1,46 @@
+//Inheritance Example : Intializing sub class object using constructor 
+class Box{
+    double width;
+    double height;
+    double depth;
+    //Default Constructor
+    Box(){
+        width = 0.0;
+        height = 0.0;
+        depth = 0.0;
+    }
+    Box(double w, double h,double d){
+        width = w;
+        height = h;
+        depth = d;
+    }
+    //compute and return volume
+    double volume(){
+        return width*depth*height;
+    }
+}
+// Here, BOx is extended to include weight 
+class BoxWeight extends Box{
+    double weight;
+    //constructor for BoxWeight
+    BoxWeight(double w,double h,double d,double m){
+        width = w;
+        height = h;
+        depth = d;
+        weight = m;
+    }
+}
+
+class InheritanceDemo1{
+    public static void main(String[] args) {
+        Box box1 = new Box();
+        BoxWeight box2 = new BoxWeight(2, 3, 4, 0.076);
+        double vol;
+        vol = box1.volume();
+        System.out.println("Volume of Box1 = "+vol);
+        System.out.println();
+        vol = box2.volume();
+        System.out.println("Volume of Box2 = "+vol);
+        System.out.println("Weight of Box2 = "+box2.weight);
+    }
+}
